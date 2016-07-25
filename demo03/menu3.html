@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多级菜单</title>
+	<style>
+		.top-nav {
+			font-size: 14px;
+			font-weight: bold;
+			list-style: none;
+		}
+		.top-nav li {
+			float: left;
+			margin-right: 1px;					
+		}
+		.top-nav li a {
+			width: 100px;
+			line-height: 30px;
+			text-align: center;
+			text-decoration: none;
+			background-color: #ddd;
+			color: #666;
+			display: block;
+		}
+		.top-nav li a:hover {
+			background-color: #900;
+			color: #fff;
+		}
+		.top-nav li ul {
+			display: none;
+			list-style: none;
+			padding: 0;
+			position: relative;
+		}
+		.top-nav li:hover ul {
+			display: block;
+			width: 100px;
+		}
+		.top-nav li:hover ul li ul {
+			display: none;
+		}
+		.top-nav li ul li:hover ul {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 101px;
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="top-nav">
+		<li><a href="#">幕客网首页</a></li>
+		<li><a href="#">课程大厅</a></li>
+		<li>
+			<a href="#">学习中心 +
+				<ul>
+					<li>
+						<a href="#">前端课程 +
+							<ul>
+								<li><a href="#">JavaScript</a></li>
+								<li><a href="#">css</a></li>
+								<li><a href="#">jQuery</a></li>
+							</ul>
+						</a>
+					</li>
+					<li><a href="#">手机开发</a></li>
+					<li><a href="#">后台编程</a></li>
+				</ul>
+			</a>
+		</li>
+		<li><a href="#">关于我们</a></li>
+	</ul>
+</body>
+</html>
