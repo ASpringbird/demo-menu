@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画菜单-jQuery</title>
+	<style>
+		.top-nav {
+			font-size: 14px;
+			font-weight: bold;
+			list-style: none;
+		}
+		.top-nav li {
+			float: left;
+			margin-right: 1px;					
+		}
+		.top-nav li a {
+			width: 80px;
+			line-height: 34px;
+			text-align: center;
+			text-decoration: none;
+			background: #3f240e;
+			color: #fff;
+			display: block;
+		}
+		.top-nav li ul {
+			display: none;
+			list-style: none;
+			padding: 0;
+			position: absolute;
+		}
+		.top-nav li a:hover {
+			background: url(images/slide-bg.png) 0 0 repeat-x;
+			color: #fff;
+		}
+		.note {
+			color: #3f240e;
+			display: block;
+			background: url(images/slide-bg.png) 0 0 repeat-x;
+		}
+		.arrow {
+			display: block;
+			height: 11px;
+			background: url(images/arrow.png) 31px 0 no-repeat;		
+		}
+
+	</style>
+	<script type="text/javascript" src="jquery/jquery-3.0.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".top-nav li").mousemove(function() {
+				$(this).find("ul").slideDown("1000");
+				$(this).find("ul").stop().slideDown("1000");  //清理定时器
+			});
+			$(".top-nav li").mouseleave(function() {
+				$(this).find("ul").slideUp("1000");
+				$(this).find("ul").stop().slideUp("1000");
+			});
+		})
+	</script>
+</head>
+<body>
+	<ul class="top-nav">
+		<li><a href="#"><span class="note">首页</span></a></li>
+		<li><a href="#">课程大厅</a></li>
+		<li>
+			<a href="#">学习中心
+				<ul>
+					<span class="arrow"></span>
+					<li><a href="#">前端课程</a></li>
+					<li><a href="#">手机开发</a></li>
+					<li><a href="#">后台编程</a></li> 
+				</ul>
+			</a>
+		</li>
+		<li><a href="#">关于我们</a></li>
+	</ul>
+</body>
+</html>
